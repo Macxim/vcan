@@ -1,2 +1,19 @@
-<h1>Vcan</h1>
-{{outlet}}
+<div class="container">
+  <div class="">
+    {{#link-to 'index'}}
+      <h1>Vcan</h1>
+    {{/link-to}}
+  </div>
+  <nav class="nav">
+    <ul>
+      <li>
+        {{#link-to 'about'}}
+          About
+        {{/link-to}}
+      </li>
+    </ul>
+  </nav>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>
