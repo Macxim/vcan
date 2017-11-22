@@ -3,22 +3,19 @@ import moduleForAcceptance from 'vcan/tests/helpers/module-for-acceptance';
 
 moduleForAcceptance('Acceptance | list places');
 
-test('visiting /', function(assert) {
+test('should show places as the home page.', function (assert) {
   visit('/');
-
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/places', 'should redirect automatically');
   });
 });
 
-
-test('should show places as the home page.', function (assert) {
-});
-
 test('should link to information about vcan.', function (assert) {
-});
-
-test('should link to contact information.', function (assert) {
+  visit('/');
+  click('a:contains("About")');
+  andThen(function() {
+    assert.equal(currentURL(), '/about', 'should navigate to about');
+  });
 });
 
 test('should list available places.', function (assert) {
